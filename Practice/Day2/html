@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <img class="logo"src="https://upload.wikimedia.org/wikipedia/commons/7/77/Breaking_Bad_logo.svg" alt="walt">
+    </header>
+
+    <main>
+    <h1 class="top">Welcome to my Page</h1>
+  
+   <section>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, deleniti autem porro quas vel est voluptatem et cum sequi suscipit rerum, quo quam possimus sit voluptate! Sequi obcaecati ducimus nostrum?</section>
+   <section>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, deleniti autem porro quas vel est voluptatem et cum sequi suscipit rerum, quo quam possimus sit voluptate! Sequi obcaecati ducimus nostrum?</section>
+<div class="card_image">
+    <span id="walt_title">Walter</span>
+     <img src="https://upload.wikimedia.org/wikipedia/en/0/03/Walter_White_S5B.png" alt="walt">
+     <span id="walt_id">1</span>
+     
+</div>
+<br></br>
+<hr>
+
+<h2>My Favorite music instrumental</h2>
+<ul>
+    <li><a href="https://guitar.com/">Guitar</a></li>
+    <li>Bass</li>
+    <li>Dragon</li>
+</ul>
+<a class="up" href="#top">Up</a>
+</main>
+<footer>SAY MY NAME</footer>
+</body>
+</html>
