@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Clone</title>
+    <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-right">
+            <a href="#">Gmail</a>
+            <a href="#">ค้นรูป</a>
+            <img class="nine" src="https://cdn.icon-icons.com/icons2/1129/PNG/512/buttonsymbolofninedots_80014.png" >
+            <img class="proile" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEinW-gUzDBsMaDp7BcQ6E6aurHGTgm-KR2rzP-jkC-wZ6GJfYt5h2gH1dHTzftmxXLP6SY1B0uJXtf2QTn2oWaqlgv0A_9l4lS01Tmbgn2DaVX8CKHS5DxOgjeEnPLgPBWmzFMs2D4FJkc/s320/BlueHead.jpg" >
+        </div>
+    </header>
+    
+    <div class="google-container">
+        <div class="google-logo">
+            <img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png" >
+        </div>
+        <div class="search-box">
+            <input type="text">
+            <img class="search-icon" src="https://img.icons8.com/material-outlined/24/000000/search.png"  >   
+            <img class="search-icon2" src="https://upload.wikimedia.org/wikipedia/commons/e/e8/Google_mic.svg" alt="Microphone" >
+            <img class="search-icon3" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Google_Lens_Icon.svg/640px-Google_Lens_Icon.svg.png" >
+            
+                </div>
+        <img class="add" src="https://icons.veryicon.com/png/o/miscellaneous/o2o-middle-school-project/plus-104.png" alt="plus" >
+        
+        </div>
+      
+    
+        
+    </footer>
+</body>
+</html>
