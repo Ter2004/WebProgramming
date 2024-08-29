@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grid</title>
+    <link rel="stylesheet" href="grid.css">
+</head>
+<body>
+    <div class="container">
+        <div class="grid-item" >IKEA
+            
+            <span class="message">Go shopping 
+                in your local site
+                <div class="messgae2">
+                    <button>Click here</button>
+                </div>
+                </span>
+               
+        </div>
+        <div class="grid-item">IKEA TODAY</div>
+        <div class="grid-item">ABOUT IKEA</div>
+        <div class="grid-item">IKEA MUSEUMM</div>
+        <div class="grid-item">IKEA at H22</div>
+        
+    </div>
+</body>
+</html>
