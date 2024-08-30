@@ -1,0 +1,23 @@
+* {
+  box-sizing: border-box;
+  font-family: "Roboto", system-ui;
+  font-weight: 500;
+  font-style: normal;
+  margin: 0;
+  padding: 0;
+}
+header{
+  font-size: 1.5rem;
+  padding: 1em;
+}
+.image-container img{
+  width: 100%;
+}
+.card{
+  margin: 0.5em;
+  padding: 1em;
+  max-width: 900px;
+  border: 2px solid black;
+  border-radius: 1em;
+  box-shadow: 4px 4px 4px #000;
+}
