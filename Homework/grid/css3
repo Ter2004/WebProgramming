@@ -1,0 +1,210 @@
+.container {
+    display: grid;
+    border: 1px solid black;
+
+ 
+
+    grid-template-columns: 100px 100px;
+  
+     grid-template-columns: repeat(2,1fr); 
+    
+
+    gap: 0.5em;
+ 
+
+    justify-content: center;
+
+
+    width: 99vw;
+    height: 98vh;
+}
+
+
+.grid-item {
+   background: white;
+   font-size: larger;
+}
+
+.grid-item:first-child {
+    grid-row: 1/5;
+    grid-column-start: 1;
+    grid-column-end: 1;
+    
+    grid-row-start: 1;
+    grid-row-end: 5;
+    background-image: url(https://images.unsplash.com/photo-1694875546238-67cb3596adf1?q=80&w=1336&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+    Background-position : center;
+    Background-size: cover;
+    text-shadow: 1px 1px 2px rgb(0, 0, 0);
+    text-align: center;
+    font-size: 40px;
+    color: white;
+  
+}
+
+.logo-section {
+    grid-row: 1/5;
+    background-image: url(https://images.unsplash.com/photo-1694875546238-67cb3596adf1?q=80&w=1336&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; 
+    padding: 50px 20px; 
+    text-align: center;
+}
+
+.logo {
+    font-size: 220px; 
+    font-weight: bold;
+    color: #FFD700; 
+    margin-bottom: 100px; 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.logo sup {
+    font-size: 0.2em; 
+    vertical-align: top; 
+    margin-left: -1em; 
+}
+
+.trademark {
+    position: relative;
+    top: -100px;
+    left: -20px;
+    color: #FFD700;
+    font-size: 0.3em; 
+}
+
+span{
+    color: white;
+}
+.message{
+    margin-top: 150px;
+    position: absolute;
+    top: 30%;
+    left: 1%;
+    color: white;
+    font-size: 32px;
+}
+
+.message2{
+    margin-top: 50px;
+}
+
+button {
+    position: relative;
+    background-color: #FFD700; 
+    border: none;
+    border-radius: 40px;
+    padding: 25px 128px;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-shadow: 1px 1px 2px rgb(0, 0, 0);
+    z-index: 2;
+    overflow: hidden; 
+
+}
+
+button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 19.5%; 
+    width: 90%;
+    height: 100%;
+    background-color: #e2d279; 
+    z-index: 1;
+}
+
+button span {
+    position: relative;
+    z-index: 3;
+    left: -80%; 
+    margin-left: 15px; 
+}
+
+button:hover {
+    background-color: #f2c800; 
+}
+
+button::after {
+    content: '';
+    position: absolute;
+    top: -10px; 
+    left: -20%; 
+    transform: translateX(-50%);
+    width: 24px; 
+    height: 24px;
+    background-image: url('https://p1.hiclipart.com/preview/652/257/251/arrow-icon-bottom-icon-direction-icon-down-icon-pointing-icon-logo-line-hand-symbol-finger-png-clipart.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: 2;
+}
+
+
+.grid-item:nth-child(2) {
+    background-image: url(https://media.istockphoto.com/id/459066815/photo/couple-putting-together-self-assembly-furniture-in-new-home.jpg?s=612x612&w=0&k=20&c=1ozEnXav5VqjAYL1F1kw03eUDV_3thBnOFHtIsxXlWI=);
+    Background-position : center;
+    Background-size: cover;
+    color: white;
+    text-shadow: 1px 1px 2px rgb(0, 0, 0);
+    padding: 20px;
+    font-size: 30px;
+    
+}
+
+.grid-item:nth-child(3) {
+    background-image: url(https://images.unsplash.com/photo-1630654977907-372a1a173aff?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+    Background-position : center;
+    Background-size: cover;
+    color: white;
+    text-shadow: 1px 1px 2px rgb(0, 0, 0);
+    padding: 20px;
+    font-size: 30px;
+}
+.grid-item:nth-child(4) {
+    background-image: url(https://plus.unsplash.com/premium_photo-1661632275299-55fde9893123?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+    Background-position : center;
+    Background-size: cover;
+    color: white;
+    text-shadow: 1px 1px 2px rgb(5, 5, 5);
+    padding: 20px;
+    font-size: 30px;
+}
+
+.grid-item:nth-child(5) {
+    background-image: url(https://media.istockphoto.com/id/1272690621/photo/leading-a-successful-company.jpg?s=612x612&w=0&k=20&c=4UOKjUqr0_e9BPzIa0EnRttm11Oi2ci4tbgSA38SBuI=);
+    Background-position : center;
+    Background-size: cover;
+    color: white;
+    text-shadow: 1px 1px 2px rgb(0, 0, 0);
+    padding: 20px;
+    font-size: 30px;
+}
+@media screen and (max-width: 850px){
+    .container{
+        display: grid;
+        grid-template-rows: repeat(7,minmax(200px, 1fr));
+        grid-template-columns: repeat(1,minmax(200px, 1fr));
+        gap: 0.5em;
+        grid-template-areas: 
+        'head'
+        'head'
+        'head'
+        'card1'
+        'card2'
+        'card3'
+        'card4';
+
+        justify-content: center;
+    }
+    
+}
