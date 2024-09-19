@@ -181,8 +181,8 @@
     <!-- Footer -->
     <footer class="bg-gray-800 text-white py-8">
         <div class="container mx-auto text-center">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.</p>
-            <p class="mt-4">&copy; 2024 CoC. All Rights Reserved.</p>
+            <p>Nike is a global leader in sportswear, known for innovative footwear, apparel, and accessories. With the iconic "Just Do It" slogan, Nike empowers athletes and individuals to push their limits, offering cutting-edge products that blend style, performance, and comfort.</p>
+            <p class="mt-4">&copy; 2024 Nike. All Rights Reserved.</p>
         </div>
     </footer>
 
