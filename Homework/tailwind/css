@@ -1,0 +1,228 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5ed;
+    color: #333;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Header */
+.header {
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px 0;
+    position: relative;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo img {
+    height: 40px;
+}
+
+.hamburger {
+    display: none;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.icon {
+    width: 24px;
+    height: 24px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.nav-links li a:hover {
+    color: black;
+}
+
+/* Mobile Menu */
+.mobile-menu {
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.mobile-menu-list {
+    list-style: none;
+    padding: 20px 0;
+}
+
+.mobile-menu-list li {
+    padding: 10px 0;
+}
+
+.mobile-menu-list li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 40px auto;
+    max-width: 1200px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.hero-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.hero-text {
+    position: relative;
+    z-index: 10;
+    color: white;
+    padding-left: 40px;
+}
+
+.hero-text h1 {
+    font-size: 3rem;
+    color: #99ccff;
+    text-shadow: 2px 2px 5px rgba(0, 0, 255, 0.8);
+}
+.blue-shadow {
+    text-shadow: 3px 3px 5px rgba(0, 0, 255, 0.8);
+}
+.hero-text p {
+    font-size: 1.2rem;
+    margin-top: 20px;
+    max-width: 600px;
+}
+
+.btn {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+/* Services Section */
+.services {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.service-headings {
+    display: flex;
+    justify-content: space-between;
+}
+
+.service-headings h2 {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+/* Services Section */
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns for larger screens */
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* Service boxes styling */
+.service-box {
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.service-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Media query to change to 2x2 grid when the screen width is minimized (for mobile) */
+@media (max-width: 768px) {
+    .service-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on smaller screens */
+    }
+}
+
+/* Footer */
+.footer {
+    background-color: #333;
+    color: white;
+    padding: 40px 0;
+    text-align: center;
+}
+
+.footer-content p {
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+.footer-content p:last-child {
+    margin-top: 20px;
+}
