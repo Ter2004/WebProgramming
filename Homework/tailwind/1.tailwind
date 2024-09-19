@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoC | We Are The Best</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+    </script>
+    <style>
+        /* Add z-index to ensure mobile menu appears above other content */
+        #mobile-menu {
+            z-index: 50;
+        }
+
+        /* Add blue text-shadow */
+        .blue-shadow {
+            text-shadow: 2px 2px 5px rgba(0, 0, 255, 0.8);
+        }
+
+        /* Update background color to cream */
+        body {
+            background-color: #f5f5ed; /* Cream color */
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="bg-white shadow-md">
+        <nav class="container mx-auto flex justify-between items-center py-4 relative">
+            <!-- Replace 'CoC' with logo -->
+            <div>
+                <img src="https://1000logos.net/wp-content/uploads/2021/11/Nike-Logo-500x281.png" alt="Logo" class="h-10">
+            </div>
+            <button class="lg:hidden text-gray-600 focus:outline-none" onclick="toggleMenu()">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+            <ul class="hidden lg:flex space-x-6 text-gray-600">
+                <li><a href="#" class="hover:text-black font-bold">Home</a></li>
+                <li><a href="#" class="hover:text-black font-bold">About</a></li>
+                <li><a href="#" class="hover:text-black font-bold">Contact</a></li>
+            </ul>
+        </nav>
+        <div id="mobile-menu" class="lg:hidden hidden bg-white shadow-md absolute top-16 right-0 w-full">
+            <ul class="flex flex-col items-center py-4">
+                <li><a href="#" class="block py-2 text-gray-600 hover:text-black font-bold">Home</a></li>
+                <li><a href="#" class="block py-2 text-gray-600 hover:text-black font-bold">About</a></li>
+                <li><a href="#" class="block py-2 text-gray-600 hover:text-black font-bold">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative h-screen flex items-center justify-start rounded-lg overflow-hidden container mx-auto shadow-lg my-8">
+        <!-- Background Image -->
+        <img src="https://image-cdn.hypb.st/https%3A%2F%2Fhypebeast.com%2Fimage%2F2021%2F05%2Ffragment-design-travis-scott-air-jordan-1-low-dm7866-140-release-info-1.jpg?q=90&w=1400&cbr=1&fit=max" alt="Hero Image" class="absolute inset-0 w-full h-full object-cover rounded-lg">
+        
+        <!-- Overlay for darker background effect -->
+        <div class="absolute inset-0 bg-black opacity-50 rounded-lg"></div>
+
+        <!-- Text Content (Moved to the left side) -->
+        <div class="relative z-10 text-left text-white space-y-6 pl-10">
+            <h1 class="text-5xl font-bold text-blue-300 blue-shadow">
+                Travis Scott x Fragment</h1>
+            <p class="text-lg">The Air Jordan 1 Low Travis Scott x Fragment Design is a collaboration between Nike, Travis Scott, and Hiroshi Fujiwara's Fragment Design. Released in 2021, this highly sought-after sneaker fuses the signature aesthetics of both collaborators.</p>
+            <button class="bg-blue-500 text-white px-6 py-3 rounded-md shadow-md hover:bg-blue-600">Buy Now</button>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="container mx-auto my-8 p-6 bg-white shadow-md">
+        <div class="flex justify-between items-center">
+            <h2 class="text-3xl font-bold">Service 1</h2>
+            <h2 class="text-3xl font-bold">Service 2</h2>
+            <h2 class="text-3xl font-bold">Service 3</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-8">
+            <!-- Service 1 (Image covers all) -->
+            <div class="bg-gray-200 rounded-md shadow-lg overflow-hidden h-48">
+                <img src="https://mrsorted.co.uk/wp-content/uploads/2023/05/DM7866-140-1000x1000.webp" alt="Service 1" class="w-full h-full object-cover">
+            </div>
+            <!-- Service 2 (Image covers all) -->
+            <div class="bg-gray-200 rounded-md shadow-lg overflow-hidden h-48">
+                <img src="https://mrsorted.co.uk/wp-content/uploads/2023/05/DM7866-140_2-1000x1000.webp" alt="Service 2" class="w-full h-full object-cover">
+            </div>
+            <!-- Service 3 (Image covers all) -->
+            <div class="bg-gray-200 rounded-md shadow-lg overflow-hidden h-48">
+                <img src="https://mrsorted.co.uk/wp-content/uploads/2023/05/DM7866-140_3-1000x1000.webp" alt="Service 3" class="w-full h-full object-cover">
+            </div>
+            <!-- Service 4 (Image covers all) -->
+            <div class="bg-gray-200 rounded-md shadow-lg overflow-hidden h-48">
+                <img src="https://mrsorted.co.uk/wp-content/uploads/2023/05/DM7866-140_4.webp" class="w-full h-full object-cover">
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto text-center">
+            <p>Nike is a global leader in sportswear, known for innovative footwear, apparel, and accessories. With the iconic "Just Do It" slogan, Nike empowers athletes and individuals to push their limits, offering cutting-edge products that blend style, performance, and comfort.</p>
+            <p class="mt-4">&copy; 2024 Nike. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
