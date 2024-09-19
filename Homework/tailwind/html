@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoC | We Are The Best</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+    </script>
+    <style>
+        /* General Styles */
+        body {
+            background-color: #f5f5ed; /* Cream color */
+        }
+
+        /* Drawer Styles */
+        .drawer {
+            position: fixed;
+            top: 0;
+            left: -500px;
+            width: 300px;
+            height: 100%;
+            background-color: #4A5568; /* Dark Gray */
+            color: white;
+            z-index: 50;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .drawer.open {
+            left: 0;
+        }
+
+        .drawer-header {
+            background-color: #f5e6ac;
+            padding: 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .drawer a {
+            display: block;
+            padding: 16px;
+            text-decoration: none;
+            color: #CBD5E0; /* Light Gray */
+        }
+
+        .drawer a:hover {
+            background-color: #2D3748; /* Darker hover */
+        }
+
+        .drawer-close {
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Services Section - Responsive Grid Layout */
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .service-box {
+            background-color: #f0f0f0;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .service-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        /* Media query for mobile drawer toggle and 2-column layout */
+        @media (max-width: 768px) {
+            .service-grid {
+                grid-template-columns: repeat(2, 1fr); /* 2 columns on smaller screens */
+            }
+
+            /* Drawer visibility only for smaller screens */
+            .drawer {
+                display: block;
+            }
+
+            .drawer.open {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="bg-white shadow-md">
+        <nav class="container mx-auto flex justify-between items-center py-4 relative">
+            <!-- Logo -->
+            <div>
+                <img src="https://1000logos.net/wp-content/uploads/2021/11/Nike-Logo-500x281.png" alt="Logo" class="h-10">
+            </div>
+
+            <!-- Hamburger Icon for Mobile -->
+            <div class="hamburger md:hidden cursor-pointer" id="hamburger">
+                <div class="w-8 h-1 bg-black mb-1"></div>
+                <div class="w-8 h-1 bg-black mb-1"></div>
+                <div class="w-8 h-1 bg-black"></div>
+            </div>
+
+            <!-- Desktop Menu -->
+            <ul class="hidden lg:flex space-x-6 text-gray-600">
+                <li><a href="#" class="hover:text-black font-bold">Home</a></li>
+                <li><a href="#" class="hover:text-black font-bold">About</a></li>
+                <li><a href="#" class="hover:text-black font-bold">Contact</a></li>
+            </ul>
+        </nav>
+
+        <!-- Drawer Menu -->
+        <div class="drawer" id="drawer">
+            <div class="drawer-header">
+                <h2 class="font-bold text-white">Menu</h2>
+                <button class="drawer-close" id="closeDrawer">&times;</button>
+            </div>
+            <a class="block p-4 text-lg text-gray-200 hover:bg-gray-800" href="#">HOME</a>
+            <a class="block p-4 text-lg text-gray-200 hover:bg-gray-800" href="#">ABOUT</a>
+            <a class="block p-4 text-lg text-gray-200 hover:bg-gray-800" href="#">CONTACT</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative h-screen flex items-center justify-start rounded-lg overflow-hidden container mx-auto shadow-lg my-8">
+        <!-- Background Image -->
+        <img src="https://image-cdn.hypb.st/https%3A%2F%2Fhypebeast.com%2Fimage%2F2021%2F05%2Ffragment-design-travis-scott-air-jordan-1-low-dm7866-140-release-info-1.jpg?q=90&w=1400&cbr=1&fit=max" alt="Hero Image" class="absolute inset-0 w-full h-full object-cover rounded-lg">
+        
+        <!-- Overlay for darker background effect -->
+        <div class="absolute inset-0 bg-black opacity-50 rounded-lg"></div>
+
+        <!-- Text Content -->
+        <!-- Text Content -->
+<div class="relative z-10 text-left text-white space-y-6 pl-10">
+    <h1 class="text-5xl font-bold text-blue-300 blue-shadow">Travis Scott x Fragment</h1>
+    <p class="text-lg">The Air Jordan 1 Low Travis Scott x Fragment Design is a collaboration between Nike, Travis Scott, and Hiroshi Fujiwara's Fragment Design. Released in 2021, this highly sought-after sneaker fuses the signature aesthetics of both collaborators.</p>
+    <button class="bg-blue-500 text-white px-6 py-3 rounded-md shadow-md hover:bg-blue-600">Buy Now</button>
+</div>
+
+    </section>
+
+    <!-- Services Section -->
+    <section class="container mx-auto my-8 p-6 bg-white shadow-md">
+        <h2 class="text-3xl font-bold mb-4">Deatil</h2>
+        <div class="service-grid">
+            <!-- Service 1 -->
+            <div class="service-box">
+                <img src="https://mrsorted.co.uk/wp-content/uploads/2023/05/DM7866-140-1000x1000.webp" alt="Service 1">
+            </div>
+            <!-- Service 2 -->
+            <div class="service-box">
+                <img src="https://mrsorted.co.uk/wp-content/uploads/2023/05/DM7866-140_2-1000x1000.webp" alt="Service 2">
+            </div>
+            <!-- Service 3 -->
+            <div class="service-box">
+                <img src="https://mrsorted.co.uk/wp-content/uploads/2023/05/DM7866-140_3-1000x1000.webp" alt="Service 3">
+            </div>
+            <!-- Service 4 -->
+            <div class="service-box">
+                <img src="https://mrsorted.co.uk/wp-content/uploads/2023/05/DM7866-140_4.webp" alt="Service 4">
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto text-center">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.</p>
+            <p class="mt-4">&copy; 2024 CoC. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Drawer Toggle Script -->
+    <script>
+        const drawer = document.getElementById('drawer');
+        const hamburger = document.getElementById('hamburger');
+        const closeButton = document.getElementById('closeDrawer');
+
+        function toggleDrawer() {
+            drawer.classList.toggle('open');
+        }
+
+        hamburger.addEventListener('click', toggleDrawer);
+        closeButton.addEventListener('click', toggleDrawer);
+    </script>
+</body>
+</html>
