@@ -1,54 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body {
-      margin: 0;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-color: #2F5A76;
-    }
 
-    .flag {
-      position: relative;
-      width: 400px; /* Width */
-      height: 300px; /* Height */
-      background-color: #2F5A76;
-      overflow: hidden;
-    }
+<div class="container">
+  <div class="bar1"></div>
+  <div class="bar2"></div>
+</div>
 
-    .diagonal-left {
-      position: absolute;
-      width: 200%; /* Increased width to ensure the diagonal covers */
-      height: 100px; /* Thicker bars */
-      background-color: #F5BB60;
-      top: 50%;
-      left: -50%;
-      transform: rotate(45deg);
-      transform-origin: center;
-    }
+<style>
+  *{
+Margin: 0px
+}
+  .container {
+    width: 500px;
+    height: 600px;
+    background: #2F5A76;
+    position: relative;
+    overflow: hidden;
+  }
 
-    .diagonal-right {
-      position: absolute;
-      width: 200%;
-      height: 100px; /* Thicker bars */
-      background-color: #F5BB60;
-      top: 50%;
-      left: -50%;
-      transform: rotate(-45deg);
-      transform-origin: center;
-    }
-  </style>
-  <title>CSS Battle Design</title>
-</head>
-<body>
-  <div class="flag">
-    <div class="diagonal-left"></div>
-    <div class="diagonal-right"></div>
-  </div>
-</body>
-</html>
+  .bar1, .bar2 {
+    position: absolute;
+    width: 600px; /* Extend beyond the container */
+    height: 80px; /* Thicker bars */
+    background: #F5BB60;
+  }
+
+  .bar1 {
+    transform: rotate(30deg);
+    top: 110px;
+    left: -100px;
+  }
+
+  .bar2 {
+    transform: rotate(-30deg);
+    top: 110px;
+    left: -100px;
+  }
+</style>
