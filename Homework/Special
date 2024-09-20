@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="bar1"></div>
+  <div class="bar2"></div>
+</div>
+
+<style>
+  .container {
+    width: 500px;
+    height: 600px;
+    background: #2F5A76;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .bar1, .bar2 {
+    position: absolute;
+    width: 600px; /* Extend beyond the container */
+    height: 80px; /* Thicker bars */
+    background: #F5BB60;
+  }
+
+  .bar1 {
+    transform: rotate(30deg);
+    top: 100px;
+    left: -100px;
+  }
+
+  .bar2 {
+    transform: rotate(-30deg);
+    top: 100px;
+    left: -100px;
+  }
+</style>
