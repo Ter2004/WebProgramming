@@ -1,0 +1,183 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    font-weight: normal;
+    font-size: large;
+    color: #544D4D;
+    background-color: #F6F2E0;
+    display: flex;
+    flex-direction: column;
+}
+
+hr {
+    background-color: rgb(149, 121, 121);
+    height: 1px;
+    border: 0;
+}
+
+header {
+    font-size: larger;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-weight: 800;
+}
+
+.logo img {
+    height: 1.2em;
+    margin-right: 0.5em;
+}
+
+.top-menu a {
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-left: 2em;
+}
+
+#toggle-menu {
+    cursor: pointer;
+    display: none;
+}
+
+.top-menu-box {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 1em;
+    background-color: #F6F2E0;
+    border: 2px solid rgb(149, 121, 121);
+    padding: 1em;
+    flex-direction: column;
+}
+
+.top-menu-box.show {
+    display: flex;
+}
+
+.line {
+    width: 2rem;
+    height: 2px;
+    background: black;
+    margin-top: 5px;
+}
+
+main {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.banner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0)), url(https://octorate.com/wordpress/wp-content/uploads/2023/03/aparthotel-1.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 24em;
+    margin: 1em;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.banner div {
+    margin: 1rem;
+}
+
+.banner h1, .banner h3 {
+    font-weight: 800;
+    text-shadow: 2px 2px gold;
+}
+
+.banner h1{
+    text-transform: uppercase;
+}
+
+.banner p {
+    width: 29rem;
+}
+
+.banner button {
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
+    background-color: #544D4D;
+    color: white;
+    border: none;
+    border-radius: 2em;
+    padding: 0.5em 2em;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.menu-row {
+    font-weight: bold;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: space-around;
+    margin: 0.6em;
+}
+
+.menu-row div {
+    cursor: pointer;
+    font-size: medium;
+    flex: 1 1 auto;
+    text-align: center;
+}
+
+.image-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.5em;
+    margin: 1em;
+}
+
+.image-row img {
+    width: 100%;
+    height: 17rem;
+    border-radius: 1rem;
+    object-fit: cover;
+}
+
+footer {
+    text-align: center;
+    padding: 1em;
+}
+
+@media screen and (max-width: 768px) {
+    .top-menu {
+        display: none;
+    }
+    #toggle-menu {
+        display: inline;
+    }
+    .banner h1, .banner h3 {
+        text-shadow: none;
+    }    
+    .banner p {
+        width: 46%;
+    }
+    .menu-row div:last-child {
+        display: none;
+    }
+    .image-row {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .image-row img {
+        height: 10em;
+    }
+    footer {
+        text-align: left;
+    }
+}
