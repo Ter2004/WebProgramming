@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="ll.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+   
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="https://cdn-icons-png.flaticon.com/512/103/103719.png" alt="">
+            <span>CoC</span>
+        </div>
+        <div class="top-menu">
+            <a>Home</a>
+            <a>About</a>
+            <a>Contact</a>
+        </div>
+        <div id="toggle-menu">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+    </header>
+    <div class="top-menu-box" id="top-menu-box">
+        <a>Home</a>
+        <a>About</a>
+        <a>Contact</a>
+    </div>
+    <main>
+        <hr>
+        <div class="banner">
+            <div>
+                <h3>Lorem ipsum dolor</h3>
+                <h1>We are the best</h1>
+                <br>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis labore odio magni minima suscipit, cum nostrum laudantium maiores aperiam fugit illum culpa. Asperiores!</p>
+                <br>
+                <button>Join us now</button>
+            </div>
+        </div>
+        <hr>
+        <div class="menu-row">
+            <div>Service 1</div>
+            <div>Service 2</div>
+            <div>Service 3</div>
+        </div>
+        <hr>
+        <div class="image-row">
+            <img src="https://res.cloudinary.com/luxuryp/images/f_auto,q_auto/j53hjuggwqvfiqnsww3n/header-photo"
+                alt="Image 1">
+            <img src="https://images.squarespace-cdn.com/content/v1/5bb5c1c2ebfc7f543b399240/1539157482689-FWKQSIJ7LQHWWUPZIZTF/6.jpg?format=2500w"
+                alt="Image 2">
+            <img src="https://e-luxuryhomes.com/wp-content/uploads/2024/03/mx4mskk9zeo-1.jpg" alt="Image 3">
+            <img src="https://i.kym-cdn.com/photos/images/newsfeed/002/444/001/a3e.jpg"
+                alt="Image 4">
+        </div>
+        <hr>
+    </main>
+    <footer>
+        <b>Lorem ipsum dolor sit amet</b>
+        <br>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora rem atque ventatis voluptatibus ex dolore.</p>
+        <br>
+        <b>Copyright © All Right Reserved</b>
+    </footer>
+
+    <script>
+        document.getElementById('toggle-menu').addEventListener('click', function() {
+            var menu = document.querySelector('.top-menu-box');
+            menu.classList.toggle('show');
+        });
+    </script>
+</body>
+
+</html>
