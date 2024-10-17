@@ -101,3 +101,17 @@
     padding: 40px;
     border-radius: 20px 0px 0px 0px;
   }
+  body {
+    background-color: black;
+    color: black; /* Optional: Change text color to white for better contrast */
+}
+.header h2 {
+  color: white; /* Make the header text white */
+}
+
+.add-instrument button {
+  color: white; /* Make the button text white */
+  background-color: #ff6b6b; /* Retain the existing background color */
+}
+
+
