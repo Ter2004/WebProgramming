@@ -106,8 +106,10 @@
     color: black; /* Optional: Change text color to white for better contrast */
 }
 .header h2 {
-  color: white; /* Make the header text white */
+    color: white; /* Make the header text white */
+    font-size: 2rem; /* Adjust the size as needed */
 }
+
 
 .add-instrument button {
   color: white; /* Make the button text white */
