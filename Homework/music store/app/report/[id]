@@ -1,0 +1,92 @@
+"use client";
+import { useParams } from 'next/navigation';
+import { useState, useEffect } from 'react';
+import Head from 'next/head';
+
+const products = [
+  { id: 1, name: 'Furch Guitars Dreadnought Sitka Spruce', price: 999, image_url: 'https://iguitarmusic.co.th/wp-content/uploads/2024/09/Furch-Guitars-Dreadnought-Sitka-SpruceIndian-Rosewood-Yellow-7-600x600.jpg',description:"The Furch Dreadnought Sitka Spruce is an acoustic guitar featuring a Sitka spruce top for balanced tone and strong projection. Its dreadnought body delivers deep bass, making it ideal for powerful strumming. Known for excellent craftsmanship, Furch often uses premium woods like rosewood for rich sound." },
+
+  { id: 2, name: 'Electric Piano Yamaha PSR-SX920', price: 899, image_url: 'https://iguitarmusic.co.th/wp-content/uploads/2024/09/Yamaha-PSR-SX920-6.jpg',description:"The Yamaha PSR-SX920 is an arranger keyboard with a 7-inch touch screen, 575 preset styles, Smart Chord for easy chord playing, and customizable voice settings. It includes advanced EQ, vocal harmony effects, and versatile recording features, making it perfect for both live performances and music production【25†source】【26†source】." },
+
+  { id: 3, name: 'Gibson 1960 Les Paul Black Beauty Electric Guitar', price: 5000, image_url: 'https://cdn11.bigcommerce.com/s-dks6ju/images/stencil/500x500/products/12727/309299/010498_01__11452.1718130884.jpg?c=2',description:"The **1960 Gibson Les Paul Black Beauty** is a high-end electric guitar with a sleek black finish, gold hardware, and three humbucking pickups for rich tone. It features a mahogany body, ebony fingerboard, and mother-of-pearl inlays, known for its luxurious style and exceptional sound【37†source】【38†source】." },
+
+  { id: 4, name: 'MARSHALL Electric Guitar Amp', price: 800, image_url: 'https://www.thexoundmusicstore.com/cdn/shop/products/marshall-code-25-ink_1024x1024@2x.jpg?v=1632906450' ,description:"The **Marshall Electric Guitar Amp** is renowned for its powerful, gritty sound, making it a staple for rock and metal guitarists. It offers versatile tone-shaping controls with classic Marshall distortion, delivering that signature British tone. Known for its durability and high-quality output, it's perfect for both stage and studio use."},
+
+  { id: 5, name: 'Electric Drum EFNOTE 3B', price: 10000, image_url: 'https://iguitarmusic.co.th/wp-content/uploads/2024/10/EFNOTE-3B.jpg',description:"The **EFNOTE 3B** is an electronic drum kit with realistic mesh pads, triple-zone cymbals, and a responsive 12 kick pad. It offers 111 sounds, USB recording, Bluetooth, and MIDI support, making it ideal for practice or small gigs【56†source】【57†source】." },
+
+  { id: 6, name: 'Native Instruments Maschine Mikro MK3 (Black)', price: 1206, image_url: 'https://iguitarmusic.co.th/wp-content/uploads/2024/10/Native-Instruments-Maschine-Mikro-MK3-Black-600x600.jpg',description:"" },
+
+  { id: 7, name: 'Eletric Guitar Strandberg Boden Metal NX 7 ', price: 5000, image_url: 'https://iguitarmusic.co.th/wp-content/uploads/2024/10/Strandberg-Boden-Metal-NX-7-%E2%80%93-Blood-Red-8-600x600.jpg',description:"The Strandberg Boden Metal NX 7 is a 7-string electric guitar designed for metal players seeking precision and power. It features a chambered basswood body with a solid maple top for a balanced, resonant tone. Its maple neck and Richlite fingerboard contribute to a fast, articulate sound, while Fishman active pickups offer versatility with powerful, high-gain tones. This guitar is lightweight, ergonomic, and perfect for modern, heavy music styles【67†source】【68†source】." },
+
+  { id: 8, name: 'Rode PodMic USB', price: 500, image_url: 'https://iguitarmusic.co.th/wp-content/uploads/2024/10/Rode-PodMic-USB-600x600.jpg' ,description:"The **Rode PodMic USB** is a dynamic microphone ideal for podcasting and streaming, featuring both USB and XLR outputs. It includes a high-power neodymium capsule for clear audio and an integrated pop filter to reduce plosives. Onboard processing enhances sound quality with compression and noise gating, making it perfect for immediate use. A USB-C cable is provided for easy connectivity【80†source】【79†source】."},
+
+  { id: 9, name: 'Radial J48 Stereo Active DI', price: 365, image_url: 'https://iguitarmusic.co.th/wp-content/uploads/2022/08/j48-stereo-thumb-768x969-1-600x600.jpg' ,description:"The Radial J48 Stereo Active DI is a robust direct box that handles input signals up to 9 volts, minimizing distortion for clear audio. It features a frequency range of 20 Hz to 40 kHz, a -15 dB pad, and a high-pass filter. Its durable steel design is ideal for live performances and multiple instrument connections"},
+
+  { id: 10, name: 'NIRVANA: KURT COBAIN SMASHED AND BAND-SIGNED "NEVERMIND" ERA FENDER STRATOCASTER ELECTRIC GUITAR', price: 899000, image_url: 'https://bid.juliensauctions.com/images/lot/5380/538056_l.jpg?ts=1727380508' ,description:"Kurt Cobain's smashed and signed Fender Stratocaster from Nirvana's Nevermind era sold for $595,000. Originally destroyed in a concert, it was later gifted to Mark Lanegan and features signatures from Cobain and his bandmates, along with the engraving Boddah Lives"},
+];
+
+const ProductPage = () => {
+  const params = useParams(); 
+  const productId = parseInt(params.id); 
+
+  const [isLoading, setIsLoading] = useState(true);
+  const [editedProduct, setEditedProduct] = useState(null);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setIsLoading(false), 1000); 
+    return () => clearTimeout(timer); 
+  }, []);
+
+  const product = products.find(p => p.id === productId);
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-white">Loading...</div>
+      </div>
+    );
+  }
+
+  if (!product) {
+    return <div className="text-white">Product not found</div>; 
+  }
+
+  const editInstrument = (id) => {
+    const newName = prompt("Enter new name:", product.name);
+    const newPrice = prompt("Enter new price:", product.price);
+    if (newName && newPrice) {
+      setEditedProduct({ ...product, name: newName, price: parseFloat(newPrice) });
+      alert(`Instrument updated: Name - ${newName}, Price - $${newPrice}`);
+    }
+  };
+
+  const displayProduct = editedProduct || product;
+
+  return (
+    <>
+      <Head>
+        <title>{displayProduct.name} | Music Store</title>
+        <meta name="description" content={`${displayProduct.name} - Buy now at the best price`} />
+        <meta name="keywords" content="music, instruments, guitars, piano, drums" />
+      </Head>
+      <div className="min-h-screen bg-gradient-to-b flex items-center justify-center">
+        <div className="bg-gray-800 shadow-lg rounded-lg p-8 max-w-lg">
+          <img src={displayProduct.image_url} alt={displayProduct.name} className="w-full h-48 bg-cover rounded-t-lg shadow-md transform transition duration-500 hover:scale-105" />
+          <h2 className="text-2xl font-bold mt-4 text-white">{displayProduct.name}</h2>
+          <p className="text-lg font-semibold text-white">Price: ${displayProduct.price}</p>
+          <p className="text-gray-300 mt-2">{displayProduct.description}</p>
+          
+          <button 
+            className="mt-4 bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700"
+            onClick={() => window.history.back()}
+          >
+            Back to Products
+          </button>
+          <button onClick={() => editInstrument(displayProduct.id)} className="edit-button border-2 m-2 p-1">Edit</button>
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default ProductPage;
