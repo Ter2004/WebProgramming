@@ -1,0 +1,125 @@
+#include <iostream>
+#include <vector>
+#include <string>
+#include <stdexcept>
+
+using namespace std;
+
+// Function to get the modular inverse of a number
+int modInverse(int a, int m) {
+    a = a % m;
+    for (int x = 1; x < m; x++)
+        if ((a * x) % m == 1)
+            return x;
+    throw std::invalid_argument("No modular inverse found");
+}
+
+// Function to find the determinant of a 2x2 matrix
+int determinant(const vector<vector<int>>& matrix) {
+    return (matrix[0][0] * matrix[1][1] - matrix[0][1] * matrix[1][0]);
+}
+
+// Function to get the cofactor matrix for a 2x2 matrix
+vector<vector<int>> cofactorMatrix(const vector<vector<int>>& matrix) {
+    vector<vector<int>> cofactor(2, vector<int>(2));
+    cofactor[0][0] = matrix[1][1];
+    cofactor[0][1] = -matrix[0][1];
+    cofactor[1][0] = -matrix[1][0];
+    cofactor[1][1] = matrix[0][0];
+    return cofactor;
+}
+
+// Function to calculate the inverse of a 2x2 matrix
+vector<vector<int>> inverseMatrix(const vector<vector<int>>& matrix, int mod) {
+    int det = determinant(matrix);
+    det = (det % mod + mod) % mod;
+    int detInverse = modInverse(det, mod);
+
+    vector<vector<int>> cofactor = cofactorMatrix(matrix);
+    for (int i = 0; i < 2; i++) {
+        for (int j = 0; j < 2; j++) {
+            cofactor[i][j] = (cofactor[i][j] * detInverse) % mod;
+            if (cofactor[i][j] < 0) cofactor[i][j] += mod; // To handle negative values
+        }
+    }
+
+    return cofactor;
+}
+
+// Function to encrypt a message using Hill Cipher
+vector<int> encryptMessage(const string& message, const vector<vector<int>>& keyMatrix) {
+    vector<int> encryptedMessage(2);
+
+    for (int i = 0; i < 2; i++) {
+        encryptedMessage[i] = 0;
+        for (int j = 0; j < 2; j++) {
+            encryptedMessage[i] += keyMatrix[i][j] * (message[j] - 'A');
+        }
+        encryptedMessage[i] %= 26;
+    }
+
+    return encryptedMessage;
+}
+
+// Function to decrypt a message using Hill Cipher
+vector<int> decryptMessage(const vector<int>& encryptedMessage, const vector<vector<int>>& keyMatrixInverse) {
+    vector<int> decryptedMessage(2);
+
+    for (int i = 0; i < 2; i++) {
+        decryptedMessage[i] = 0;
+        for (int j = 0; j < 2; j++) {
+            decryptedMessage[i] += keyMatrixInverse[i][j] * encryptedMessage[j];
+        }
+        decryptedMessage[i] %= 26;
+    }
+
+    return decryptedMessage;
+}
+
+int main() {
+    string message;
+    vector<vector<int>> keyMatrix(2, vector<int>(2));
+
+    // Get message input
+    cout << "Enter a two-letter message (A-Z): ";
+    cin >> message;
+
+    // Convert message to uppercase if necessary
+    for (char& c : message) {
+        c = toupper(c);
+    }
+
+    if (message.length() != 2) {
+        cerr << "Message must be exactly two letters long!" << endl;
+        return 1;
+    }
+
+    // Get the encryption key matrix from the user
+    cout << "Enter 2x2 key matrix values (row by row):" << endl;
+    for (int i = 0; i < 2; i++) {
+        for (int j = 0; j < 2; j++) {
+            cin >> keyMatrix[i][j];
+        }
+    }
+
+    // Encrypt the message
+    vector<int> encryptedMessage = encryptMessage(message, keyMatrix);
+    cout << "Encrypted message: ";
+    for (int i = 0; i < 2; i++) {
+        cout << char(encryptedMessage[i] + 'A');
+    }
+    cout << endl;
+
+    // Get the inverse of the key matrix for decryption
+    vector<vector<int>> keyMatrixInverse = inverseMatrix(keyMatrix, 26);
+
+    // Decrypt the message
+    vector<int> decryptedMessage = decryptMessage(encryptedMessage, keyMatrixInverse);
+    cout << "Decrypted message: ";
+    for (int i = 0; i < 2; i++) {
+        cout << char(decryptedMessage[i] + 'A');
+    }
+    cout << endl;
+
+    return 0;
+}
